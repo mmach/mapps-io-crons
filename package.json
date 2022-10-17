@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node ./src/index.js",
+    "start": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +14,7 @@
     "better-validator": "^2.1.9",
     "cron": "^2.0.0",
     "dotenv": "^8.2.0",
+    "flatted": "^3.2.7",
     "justshare-shared": "^1.0.104",
     "uuidv4": "^6.2.13"
   }
