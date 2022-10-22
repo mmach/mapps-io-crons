@@ -1,9 +1,8 @@
 
-const axios = require('axios')
-const { QueryList } = require('justshare-shared')
-const  stringify  = require('flatted').stringify;
+import axios from 'axios';
+import { stringify } from 'flatted';
 
-var http_request = async (action, model, lang, token, proj) => {
+export const http_request = async (action, model, lang, token, proj) => {
     return await axios({
         method: 'get',
         url: process.env.URL + '/query?action=' + encodeURIComponent(stringify({
@@ -14,7 +13,7 @@ var http_request = async (action, model, lang, token, proj) => {
         headers: { "Authorization": `Bearer ${token}`, "Language": lang, "ProjectAuthorization": `Bearer ${proj}` }
     })
 }
-var http_request_post = async (action, model, lang, token, proj) => {
+export const http_request_post = async (action, model, lang, token, proj) => {
     return await axios({
         method: 'post',
         url: process.env.URL + '/command',
@@ -28,4 +27,3 @@ var http_request_post = async (action, model, lang, token, proj) => {
 }
 
 
-module.exports = { http_request ,http_request_post}

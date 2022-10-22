@@ -1,9 +1,10 @@
 // Module dependencies.
-const { QueryList } = require('justshare-shared')
-require('dotenv').config()
-const { http_request, http_request_post } = require('./http_request.js')
-var CronJob = require('cron').CronJob;
+import { QueryList } from 'justshare-shared'
+import dotenv from 'dotenv'
+import { http_request, http_request_post } from './http_request.js'
+import {CronJob} from 'cron';
 
+dotenv.config()
 let projects = {}
 
 
