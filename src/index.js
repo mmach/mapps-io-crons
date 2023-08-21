@@ -3,6 +3,16 @@ import { QueryList } from 'justshare-shared'
 import dotenv from 'dotenv'
 import { http_request, http_request_post } from './http_request.js'
 import {CronJob} from 'cron';
+import express from 'express';
+import cors from 'cors';
+
+const app = express();
+
+app.set('port', process.env.PORT || (process.argv[2] && process.argv[2].split('=')[1]) || 3000)//3005);
+app.use(cors())
+const server = app.listen(app.get('port'), () => {
+    console.log('Express server listening on port ' + app.get('port'));
+});
 
 dotenv.config()
 let projects = {}
